@@ -22,8 +22,9 @@ let isDownArrow = false;
 
 let personX = 20;
 let personY = 600;
-let movePerson = 40;
-
+let movePerson = 30;
+let streetImgX = 0;
+let streetImgY = canvas.height - streetImg.height;
 
 document.addEventListener('keydown', (event) => {
     if (event.keyCode == 39 || event.key == "ArrowRight") {
@@ -34,9 +35,6 @@ document.addEventListener('keydown', (event) => {
         isRightArrow = false;
         isLeftArrow = true;
     }
-})
-
-document.addEventListener('keydown', (event) => {
     if (event.keyCode == 38 || event.key == "ArrowUp") {
         isUpArrow = true;
         isDownArrow = false;
@@ -45,39 +43,47 @@ document.addEventListener('keydown', (event) => {
         isUpArrow = false;
         isDownArrow = true;
     }
+    console.log(personX, personY);
 })
 
 function draw (){
     ctx.drawImage(backImage, 0, 0)
-    ctx.drawImage(streetImg, 0, canvas.height - streetImg.height)
-    ctx.drawImage(bike, 750, 620)
+    ctx.drawImage(streetImg, streetImgX, streetImgY)
+    //ctx.drawImage(bike, 750, 620)//
+    
+
+    for (let i = 0; i < bikes.length; i++){
+        ctx.drawImage(bike, bikes[i].x, bikes[i].y)
+        bikes[i].x--
+        if (bikes[i].x + bike.width < 0) {
+            bikes[i].x = canvas.width
+        }
+    }
+
     ctx.drawImage(person, personX, personY)
 
-    // for (let i = 0; i < bikes.length; i++){
-    //     ctx.drawImage(bike, bikes[i].x, bikes[i].y)
-    //     ctx.drawImage(person, bikes[i].x, bikes[i].y + constant)
-    //     bikes[i].x--
-    // }
     ctx.font = '22px Sans Serif'
     ctx.fillText( 'Score: ' + score, 10, 50)
 
-    if (isRightArrow) {
+    if (isRightArrow && (personX + movePerson < canvas.width - person.height)) { 
         personX += movePerson
     }
-    else if (isLeftArrow) {
+    else if (isLeftArrow && (personX > 0)) {
         personX -= movePerson
     }
     isRightArrow = 0;
     isLeftArrow = 0;
 
-    if (isUpArrow) {
+    if (isUpArrow && personY > 560) {
         personY -= movePerson
     }
-    else if (isDownArrow) {
+    else if (isDownArrow && personY + movePerson < canvas.height - person.height) {
         personY += movePerson
     }
     isUpArrow = 0;
     isDownArrow = 0;
+
+
 }
 
 
@@ -85,4 +91,4 @@ function draw (){
 
 intervalID = setInterval(() => {
     requestAnimationFrame (draw)
-}, 100)
+}, 10)
