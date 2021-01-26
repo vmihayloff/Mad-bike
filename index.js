@@ -43,18 +43,18 @@ document.addEventListener('keydown', (event) => {
         isUpArrow = false;
         isDownArrow = true;
     }
-    console.log(personX, personY);
 })
 
 function draw (){
     ctx.drawImage(backImage, 0, 0)
     ctx.drawImage(streetImg, streetImgX, streetImgY)
     //ctx.drawImage(bike, 750, 620)//
-    
+
 
     for (let i = 0; i < bikes.length; i++){
         ctx.drawImage(bike, bikes[i].x, bikes[i].y)
         bikes[i].x--
+        bikeCollision(i)
         if (bikes[i].x + bike.width < 0) {
             bikes[i].x = canvas.width
         }
@@ -84,6 +84,16 @@ function draw (){
     isDownArrow = 0;
 
 
+}
+
+function bikeCollision (i) {
+    if (((personX + person.width >= bikes[i].x && personX + person.width <= bikes[i].x + bike.width) || 
+    ( personX < bikes[i].x + bike.width && personX > bikes[i].x)) && 
+    ((personY <= bikes[i].y + bike.height && personY >= bikes[i].y)|| 
+    (bikes[i].y > personY && bikes[i].y < personY + person.height))){
+
+        clearInterval (intervalID);
+    }
 }
 
 
