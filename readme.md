@@ -58,19 +58,19 @@ Definition of the different states and their transition (transition functions)
 ## Task
 Task definition in order of priority
 
-* Main.js:
+## Main.js
 - create DOM;
 - build Splash, Game and Game over screens;
 - create event listeners;
 
-* game.js
+## game.js
 - draw, build, update and clear canvas;
 - start loop;
 
-* pedestrian.js
+## pedestrian.js
 - draw and move;
 
-* bikes.js
+## bikes.js
 - draw and move;
 - collisions;
 - functions of pedestrian - run;
