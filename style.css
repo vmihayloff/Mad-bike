@@ -1,0 +1,10 @@
+#start {
+    background-color: #a2b9bc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font: "Raleway";
+    margin: auto;
+    padding: 10px;
+}
