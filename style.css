@@ -1,5 +1,5 @@
 
-#start {
+.button {
     background-color: #a2b9bc;
     display: flex;
     align-items: center;
@@ -10,8 +10,8 @@
     padding: 15px;
 }
 
-#splashScreen {
-    background-image: url('./images/resized.amsterdam.pixel.png');
+.screen {
+    background-image: url('./img/resized.amsterdam.pixel.png');
     opacity: 0.7;
     margin: 20px;
     background-repeat: no-repeat;
@@ -24,16 +24,3 @@
     justify-content: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-#gameOverScreen {
-    background-image: url('./images/resized.amsterdam.pixel.png');
-    opacity: 0.5;
-    margin: 20px;
-    background-repeat: no-repeat;
-    height: 600px;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 22px;
-}
-
