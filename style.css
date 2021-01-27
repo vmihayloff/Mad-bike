@@ -11,7 +11,7 @@
 }
 
 #splashScreen {
-    background-image: url("/Images/resized.amsterdam.pixel.png");
+    background-image: url('images/resized.amsterdam.pixel.png');
     opacity: 0.7;
     margin: 20px;
     background-repeat: no-repeat;
@@ -25,7 +25,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 #gameOverScreen {
-    background-image: url("/Images/resized.amsterdam.pixel.png");
+    background-image: url('images/resized.amsterdam.pixel.png');
     opacity: 0.5;
     margin: 20px;
     background-repeat: no-repeat;

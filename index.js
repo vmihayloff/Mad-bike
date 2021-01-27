@@ -11,13 +11,13 @@ let splashScreen = document.querySelector ('#splashScreen');
 let gameOverScreen = document.querySelector ('#gameOverScreen')
 
 let backImage = document.createElement ('img');
-backImage.src = '/Images/amsterdam.pixel.png';
+backImage.src = 'images/amsterdam.pixel.png';
 let streetImg = document.createElement ('img');
-streetImg.src = '/Images/street.png';
+streetImg.src = 'images/street.png';
 let bike = document.createElement ('img');
-bike.src = '/Images/bike.png';
+bike.src = 'images/bike.png';
 let person = document.createElement ('img');
-person.src = '/Images/tenor.gif';
+person.src = 'images/tenor.gif';
 
 let isLeftArrow = false;
 let isRightArrow = false;
