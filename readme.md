@@ -1,7 +1,7 @@
 # Mad bike
 
 ## Description
-Mad bike is an arcade game inspired by Amsterdam's daily life. The player will be in the role of a pedestrian, moving horizontally while staying away from the bikes, which are quickly approaching from the opposite horizontal direction. The score is calculated based on play time. The game ends after a collision between the player and a bike.  
+Mad bike is an arcade game inspired by Amsterdam's daily life. The player will be in the role of a pedestrian, moving horizontally and vertically while staying away from the bikes, which are quickly approaching from the opposite horizontal direction. The score is calculated based on play time. The game ends after a collision between the player and a bike.  
 
 
 ## MVP (DOM - CANVAS)
@@ -58,21 +58,20 @@ Definition of the different states and their transition (transition functions)
 ## Task
 Task definition in order of priority
 
-* Main.js:
+## Main.js
 - create DOM;
 - build Splash, Game and Game over screens;
 - create event listeners;
 
-* game.js
+## game.js
 - draw, build, update and clear canvas;
 - start loop;
 
-pedestrian.js
+## pedestrian.js
 - draw and move;
 
-bikes.js
+## bikes.js
 - draw and move;
-
 - collisions;
 - functions of pedestrian - run;
 - add event listeners;
@@ -87,7 +86,7 @@ https://ora.pm/project/290666/kanban
 
 ### Git
 URls for the project repo and deploy
-[Link Repo](http://github.com)
+[Link Repo](https://github.com/vmihayloff/Mad-bike)
 [Link Deploy](http://github.com)
 
 
