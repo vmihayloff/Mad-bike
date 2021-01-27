@@ -1,10 +1,39 @@
+
 #start {
     background-color: #a2b9bc;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    font: "Raleway";
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
     margin: auto;
-    padding: 10px;
+    padding: 15px;
 }
+
+#splashScreen {
+    background-image: url("/Images/resized.amsterdam.pixel.png");
+    opacity: 0.7;
+    margin: 20px;
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: center;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#gameOverScreen {
+    background-image: url("/Images/resized.amsterdam.pixel.png");
+    opacity: 0.5;
+    margin: 20px;
+    background-repeat: no-repeat;
+    height: 600px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+}
+

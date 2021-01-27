@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
-    <button id="start"> Start Game </button>
-    <canvas id = "myCanvas" width="1024" height="874"></canvas>
+    <div id="splashScreen">
+        <section class="text">
+            <h1> Mad bike</h1>
+            <h3> </h3>
+            <p></p>
+        </section>
+        <button id="start"> Start Game </button>
+    </div>
+    <div id="gameOverScreen">
+        <section>
+            <p> GAME OVER! </p>
+        </section>
+    </div>
+    <canvas id="myCanvas" width="1024" height="874"></canvas>
     <script src="index.js"></script>
-    
+
 </body>
+
 </html>
 
 <!-- ctx.drawImage(bike, 750, 620)

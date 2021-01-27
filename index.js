@@ -7,6 +7,9 @@ let constant = canvas.height - 300;
 let bikes = [{x: 750, y: 620}];
 
 let startButton = document.querySelector ('#start');
+let splashScreen = document.querySelector ('#splashScreen');
+let gameOverScreen = document.querySelector ('#gameOverScreen')
+
 let backImage = document.createElement ('img');
 backImage.src = '/Images/amsterdam.pixel.png';
 let streetImg = document.createElement ('img');
@@ -95,26 +98,30 @@ function bikeCollision (i) {
     (bikes[i].y > personY && bikes[i].y < personY + person.height))){
 
         clearInterval (intervalID);
-        alert (`GAME OVER! Your result is ${score.toFixed(0)}. Well done! :-)`);
-        location.reload();
+        gameOver()
+        // alert (`GAME OVER! Your result is ${score.toFixed(0)}. Well done! :-)`);
+        // location.reload();
     }
 }
 
 function startGame () {
     canvas.style.display = 'block'
-    startButton.style.display = 'none'
+    gameOverScreen.style.display = 'none'
+    splashScreen.style.display = 'none'
     intervalID = setInterval (() => {
         requestAnimationFrame (draw)
     }, 10)
 }
 function gameOver () {
     canvas.style.display = 'none'
-    startBtn.style.display = 'block'
+    startButton.style.display = 'block'
+    gameOverScreen.style.display = 'flex'
 }
 
 
 window.addEventListener ('load', () => {
     canvas.style.display = 'none'
+    gameOverScreen.style.display = 'none'
 
     startButton.addEventListener ('click', () => {
         startGame()
