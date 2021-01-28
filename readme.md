@@ -1,15 +1,17 @@
 # Mad bike
 
 ## Description
-Mad bike is an arcade game inspired by Amsterdam's daily life. The player will be in the role of a pedestrian, moving horizontally and vertically while staying away from the bikes, which are quickly approaching from the opposite horizontal direction. The score is calculated based on play time. The game ends after a collision between the player and a bike.  
+Mad bike is an arcade game inspired by Amsterdam's daily life. The player is in the role of a pedestrian, moving horizontally and vertically while staying away from the bikes, which are approaching from the opposite horizontal direction with a different speed. The score is calculated based on play time. The game ends after a collision between the player and a bike.  
 
 
 ## MVP (DOM - CANVAS)
 * the player is a pedestrian;
-* the main scene is a picture of Amsterdam;
-* bikes appear randomly from the opposite horizontal line and move fast;
+* use the keyboard arrows to play;
+* the game scene happens in Amsterdam;
+* bikes are generated randomly and appear from the opposite horizontal side with a different speed;
 * player needs to avoid them;
 * a player collision with a bike ends the game;
+* the collision is marked by a bell ring;
 * score is calculated based on time spent playing without being hit;
 
 
@@ -17,33 +19,16 @@ Mad bike is an arcade game inspired by Amsterdam's daily life. The player will b
 
 
 ## Data structure
-main.js
-* splashScreen () {}
-* gameScreen () {}
-* gameOverScreen () {}
+index.js
 
-game.js
-* game () {}
-* startLoop () {}
-* collisions () {}
-* drawCanvas () {}
-* updateCanvas () {}
-* clearCanvas () {}
+* startGame () {}
 * gameOver () {}
-
-pedestrian.js
-* pedestrian () { this.x; this.y; this.direction; this.size }
 * draw () {}
-* move () {}
-* run () {}
-
-bikes.js
-* bikes () { this.x; this.y; this.direction; this.size }
-* draw () {}
-* move () {}
-* collision () {}
-
-
+* bikeCollision () {}
+* clearInterval () {}
+* setInterval () {}
+* requestAnimationFrame ()
+* addEventListener () {}
 
 
 ## States y States Transitions
@@ -58,22 +43,22 @@ Definition of the different states and their transition (transition functions)
 ## Task
 Task definition in order of priority
 
-## Main.js
+## Main
 - create DOM;
 - build Splash, Game and Game over screens;
 - create event listeners;
 
-## game.js
+## game
 - draw, build, update and clear canvas;
 - start loop;
 
-## pedestrian.js
+## pedestrian
 - draw and move;
 
-## bikes.js
+## bikes
 - draw and move;
-- collisions;
-- functions of pedestrian - run;
+- generate with a Math.random method;
+- build collisions;
 - add event listeners;
 
 
@@ -87,9 +72,9 @@ https://ora.pm/project/290666/kanban
 ### Git
 URls for the project repo and deploy
 [Link Repo](https://github.com/vmihayloff/Mad-bike)
-[Link Deploy](http://github.com)
+[Link Deploy](https://vmihayloff.github.io/Mad-bike/)
 
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+[Google slides](https://docs.google.com/presentation/d/1Yk43UIJ-NplASRiwXJXeaVafMrU-dk7276degZn7kkc/edit?usp=sharing)

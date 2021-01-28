@@ -1,6 +1,7 @@
 let canvas = document.querySelector("canvas");
 let ctx = canvas.getContext("2d");
 canvas.style.border = "2px solid black";
+
 let intervalID = 0;
 let intervalBikeGen = 0;
 let score = 0;
@@ -8,6 +9,7 @@ let bikes = [];
 
 const music = new Audio("./amst.acc.mp3");
 music.loop = true;
+music.volume = 0.2;
 const bellMusic = new Audio("./bellring.flac");
 let gameRunning = false;
 
@@ -56,8 +58,7 @@ document.addEventListener("keydown", (event) => {
 function draw() {
   ctx.drawImage(backImage, 0, 0);
   ctx.drawImage(streetImg, streetImgX, streetImgY);
-  //   ctx.canvas.width  = window.innerWidth;
-  //   ctx.canvas.height = window.innerHeight;
+ 
 
   for (let i = 0; i < bikes.length; i++) {
     ctx.drawImage(bike, bikes[i].x, bikes[i].y);
