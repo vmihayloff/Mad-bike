@@ -4,14 +4,12 @@ canvas.style.border = "2px solid black";
 let intervalID = 0;
 let intervalBikeGen = 0;
 let score = 0;
-let constant = canvas.height - 300;
 let bikes = [];
 
 const music = new Audio("./amst.acc.mp3");
 music.loop = true;
-const bellMusic = new Audio ("./bellring.flac");
+const bellMusic = new Audio("./bellring.flac");
 let gameRunning = false;
-
 
 let startButton = document.querySelector("#start");
 let splashScreen = document.querySelector("#splashScreen");
@@ -25,7 +23,7 @@ streetImg.src = "./img/street.png";
 let bike = document.createElement("img");
 bike.src = "./img/bike.png";
 let person = document.createElement("img");
-person.src = "./img/tenor.gif";
+person.src = "./img/person.png";
 
 let isLeftArrow = false;
 let isRightArrow = false;
@@ -58,7 +56,8 @@ document.addEventListener("keydown", (event) => {
 function draw() {
   ctx.drawImage(backImage, 0, 0);
   ctx.drawImage(streetImg, streetImgX, streetImgY);
-  //ctx.drawImage(bike, 750, 620)//
+  //   ctx.canvas.width  = window.innerWidth;
+  //   ctx.canvas.height = window.innerHeight;
 
   for (let i = 0; i < bikes.length; i++) {
     ctx.drawImage(bike, bikes[i].x, bikes[i].y);
@@ -101,27 +100,23 @@ function bikeCollision(i) {
   const bikeBeginY = bikes[i].y + bike.height * 0.7;
   const bikeEndY = bikes[i].y + bike.height * 0.9;
 
-
   if (
-    
     ((personX + person.width >= bikes[i].x &&
       personX + person.width <= bikes[i].x + bike.width) ||
       (personX < bikes[i].x + bike.width && personX > bikes[i].x)) &&
     ((personBeginY >= bikeBeginY && personBeginY <= bikeEndY) ||
       (personEndY >= bikeBeginY && personEndY <= bikeEndY))
   ) {
-      bellMusic.play();
-      if (gameRunning) {
-          gameRunning = false;
-          setTimeout(gameOver, 300);
-      }
-    
-   
+    bellMusic.play();
+    if (gameRunning) {
+      gameRunning = false;
+      setTimeout(gameOver, 300);
+    }
   }
 }
 
 function startGame() {
-gameRunning = true;
+  gameRunning = true;
   personX = 20;
   personY = 600;
   bikes = [];
@@ -138,7 +133,7 @@ gameRunning = true;
     bikes.push({
       x: canvas.width,
       y: minNum + randomNum * streetImg.height,
-      speed: (Math.random() + 1),
+      speed: Math.random() + 1,
     });
   }, 3000);
 
@@ -147,8 +142,8 @@ gameRunning = true;
   }, 10);
 }
 function gameOver() {
-    let endScore = document.querySelector('span');
-    endScore.innerHTML = score.toFixed(0);
+  let endScore = document.querySelector("span");
+  endScore.innerHTML = score.toFixed(0);
 
   clearInterval(intervalID);
   clearInterval(intervalBikeGen);
