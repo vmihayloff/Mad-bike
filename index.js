@@ -6,8 +6,11 @@ let intervalBikeGen = 0;
 let score = 0;
 let constant = canvas.height - 300;
 let bikes = [];
+
 const music = new Audio("./amst.acc.mp3");
 music.loop = true;
+const bellMusic = new Audio ("./bellring.flac");
+let gameRunning = false;
 
 
 let startButton = document.querySelector("#start");
@@ -89,7 +92,7 @@ function draw() {
   }
   isUpArrow = 0;
   isDownArrow = 0;
-  score = score + 1 / 10;
+  score = score + 1 / 60;
 }
 
 function bikeCollision(i) {
@@ -107,12 +110,18 @@ function bikeCollision(i) {
     ((personBeginY >= bikeBeginY && personBeginY <= bikeEndY) ||
       (personEndY >= bikeBeginY && personEndY <= bikeEndY))
   ) {
-    gameOver();
+      bellMusic.play();
+      if (gameRunning) {
+          gameRunning = false;
+          setTimeout(gameOver, 300);
+      }
+    
    
   }
 }
 
 function startGame() {
+gameRunning = true;
   personX = 20;
   personY = 600;
   bikes = [];
