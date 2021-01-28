@@ -8,7 +8,7 @@ let constant = canvas.height - 300;
 let bikes = [];
 const music = new Audio("./amst.acc.mp3");
 music.loop = true;
-// bike coordinates: [{ x: 750, y: 620 }];//
+
 
 let startButton = document.querySelector("#start");
 let splashScreen = document.querySelector("#splashScreen");
@@ -98,18 +98,9 @@ function bikeCollision(i) {
   const bikeBeginY = bikes[i].y + bike.height * 0.7;
   const bikeEndY = bikes[i].y + bike.height * 0.9;
 
-  //   ctx.beginPath();
-  //   ctx.lineWidth = "1";
-  //   ctx.strokeStyle = "red";
-  //   ctx.rect(bikes[i].x, bikeBeginY, bike.width, bikeEndY - bikeBeginY);
-  //   ctx.stroke();
-
-  //   ctx.beginPath();
-  //   ctx.rect(personX, personBeginY, person.width, personEndY - personBeginY);
-  //   ctx.stroke();
 
   if (
-    //
+    
     ((personX + person.width >= bikes[i].x &&
       personX + person.width <= bikes[i].x + bike.width) ||
       (personX < bikes[i].x + bike.width && personX > bikes[i].x)) &&
@@ -117,8 +108,7 @@ function bikeCollision(i) {
       (personEndY >= bikeBeginY && personEndY <= bikeEndY))
   ) {
     gameOver();
-    // alert (`GAME OVER! Your result is ${score.toFixed(0)}. Well done! :-)`);
-    // location.reload();
+   
   }
 }
 
